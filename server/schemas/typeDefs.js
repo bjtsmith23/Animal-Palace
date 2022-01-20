@@ -10,7 +10,7 @@ const typeDefs = gql`
   }
 
   type Animal {
-    _id: ID
+    _id: ID!
     type: String!
     name: String!
     sex: String!
@@ -23,10 +23,11 @@ const typeDefs = gql`
     animals: [Animal]
   }
 
-  type Mutation {
-    addUser(fullName: String!, email: String!, password: String!, totalDonations: Int): Auth
-    login(email: String!, password: String!): Auth
-  }
-`;
-
-module.exports = typeDefs;
+  `;
+//   type Mutation {
+//     addUser(fullName: String!, email: String!, password: String!, totalDonations: Int): Auth
+//     login(email: String!, password: String!): Auth
+//   }
+  
+  module.exports = typeDefs;
+  
