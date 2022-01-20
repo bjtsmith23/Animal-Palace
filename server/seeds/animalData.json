@@ -1,0 +1,35 @@
+[
+    {
+      "type": "Dog",
+      "name": "Spot",
+      "sex": "male",
+      "description": "Decription goes here",
+      "age": "3"
+
+    },
+    {
+        "type": "Cat",
+        "name": "Dizzy",
+        "sex": "female",
+        "description": "Decription goes here",
+        "age": "5"
+  
+      },
+      {
+        "type": "Monkey",
+        "name": "Caesar",
+        "sex": "male",
+        "description": "Decription goes here",
+        "age": "5"
+  
+      },
+      {
+        "type": "Dog",
+        "name": "Spot",
+        "sex": "male",
+        "description": "Decription goes here",
+        "age": "3"
+  
+      }
+    
+  ]
