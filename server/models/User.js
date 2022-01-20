@@ -20,6 +20,12 @@ const userSchema = new Schema({
   totalDonations: {
     type: Number,
   },
+  adoptedAnimals: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Animal"
+    }
+  ]
 });
 // set up pre-save middleware to create password
 userSchema.pre("save", async function (next) {
@@ -33,5 +39,5 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
-const User = mongoose.model("Users", userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;
