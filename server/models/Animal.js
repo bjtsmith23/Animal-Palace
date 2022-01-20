@@ -6,7 +6,6 @@ const animalSchema = new Schema({
   type: {
     type: String,
     required: true,
-    unique: true,
   },  
   name: {
     type: String,
