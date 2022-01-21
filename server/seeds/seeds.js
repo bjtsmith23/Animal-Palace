@@ -42,7 +42,6 @@ db.once("open", async () => {
       password: "password",
       totalDonations: 0,
     },
-
   ]);
 
   console.log("users seeded");
@@ -108,7 +107,7 @@ db.once("open", async () => {
       type: "Cat",
       name: "Nosy",
       sex: "F",
-      description: "Mose curious pet here.",
+      description: "Most curious pet here.",
       age: 5,
     },
     {
