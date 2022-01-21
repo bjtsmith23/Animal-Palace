@@ -7,14 +7,16 @@ import Card from "react-bootstrap/Card";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import ListGroup from "react-bootstrap/ListGroup";
 
-import HomePuppy from "../assets/images/home-puppy.jpg";
-
-export default function Details() {
+export default function Details(props) {
+  const { modalinfo } = props;
   return (
     <Card className="border-0">
       <Row>
         <Col>
-          <Card.Img src={HomePuppy} className="detail-img" />
+          <Card.Img
+            src={modalinfo ? modalinfo.cardImg : ""}
+            className="detail-img"
+          />
         </Col>
 
         <Col>
@@ -28,8 +30,12 @@ export default function Details() {
           </Card>
           <Card>
             <ListGroup className="list-group-flush">
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+              <ListGroupItem>
+                Sex: {modalinfo ? modalinfo.cardSex : ""}
+              </ListGroupItem>
+              <ListGroupItem>
+                Age: {modalinfo ? modalinfo.cardAge : ""}
+              </ListGroupItem>
               <ListGroupItem>Vestibulum at eros</ListGroupItem>
             </ListGroup>
           </Card>
