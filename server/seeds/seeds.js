@@ -121,8 +121,7 @@ db.once("open", async () => {
       type: "Monkey",
       name: "Caesar",
       sex: "M",
-      description:
-        "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
+      description: "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
       age: 5,
     },
     {
