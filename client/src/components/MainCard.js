@@ -11,21 +11,30 @@ import exampleCat from "../assets/images/home-cat.jpg";
 export default function MainCard() {
   const mainContent = [
     {
+      _id: "ljlkasjera",
       cardImg: exampleDog,
       cardTitle: "SPOTS",
       cardSex: "F",
       cardAge: 1,
+      cardDescription: "abcdefg",
     },
     {
+      _id: "laskjfalskjera",
       cardImg: exampleCat,
       cardTitle: "SPOTS2",
       cardSex: "M",
       cardAge: 2,
+      cardDescription: "hijklmnop",
     },
   ];
-
+  const [selectedModal, setSelectedModal] = useState();
   const [modalShow, setModalShow] = useState(false);
-
+  const handleOnclick = (e) => {
+    setModalShow(!modalShow);
+    const id = e.target.getAttribute("data-modal-id");
+    const matchingContent = mainContent.filter((mc) => mc._id === id)[0];
+    setSelectedModal(matchingContent);
+  };
   return (
     <>
       {mainContent.map((content, index) => (
@@ -42,8 +51,8 @@ export default function MainCard() {
             <Card.Body>
               <Button
                 variant="primary"
-                // data-model-id={}
-                onClick={() => setModalShow(true)}
+                data-modal-id={content._id}
+                onClick={handleOnclick}
               >
                 Learn More!
               </Button>
@@ -51,7 +60,11 @@ export default function MainCard() {
           </Card>
         </div>
       ))}
-      <MainCardModal show={modalShow} onHide={() => setModalShow(false)} />
+      <MainCardModal
+        show={modalShow}
+        modalinfo={selectedModal}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 }
