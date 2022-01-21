@@ -4,7 +4,9 @@ const { User, Animal } = require("../models");
 db.once("open", async () => {
   await User.deleteMany();
 
-  const users = await User.insertMany([
+  await Animal.deleteMany();
+
+  const users = await User.create([
     {
       firstName: "Benjamin",
       lastName: "Bonfire",
@@ -44,8 +46,6 @@ db.once("open", async () => {
   ]);
 
   console.log("users seeded");
-
-  await Animal.deleteMany();
 
   const animals = await Animal.insertMany([
     {
@@ -130,16 +130,14 @@ db.once("open", async () => {
       type: "Monkey",
       name: "Banana",
       sex: "female",
-      description:
-        "A very friendly pet who is happiest when peeling a banana.",
+      description: "A very friendly pet who is happiest when peeling a banana.",
       age: 2,
     },
     {
       type: "Monkey",
       name: "Tenor",
       sex: "female",
-      description:
-        "Unable to keep quiet.",
+      description: "Unable to keep quiet.",
       age: 2,
     },
     {
@@ -162,8 +160,7 @@ db.once("open", async () => {
       type: "Rabbit",
       name: "Lucky",
       sex: "male",
-      description:
-        "Found injured under farm machinery.",
+      description: "Found injured under farm machinery.",
       age: 2,
     },
     {
