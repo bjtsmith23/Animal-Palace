@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
 const userSchema = new Schema({
-  username: {
+  firstName: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  lastName: {
     type: String,
     required: true,
     trim: true,
@@ -20,6 +25,12 @@ const userSchema = new Schema({
   totalDonations: {
     type: Number,
   },
+  adoptedAnimals: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Animal",
+    },
+  ],
 });
 // set up pre-save middleware to create password
 userSchema.pre("save", async function (next) {
