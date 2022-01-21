@@ -1,9 +1,11 @@
 import React from "react";
 import "../assets/css/Home.css";
 import Button from "react-bootstrap/Button";
+// import HomeCarousel from "../components/HomeCarousel";
 
 const Home = () => {
   return (
+    // <HomeCarousel/>
     <div className="hero">
       <div className="hero-content">
         <h1 className="hero-title">Discover the World of Animals</h1>
@@ -11,22 +13,12 @@ const Home = () => {
           From dogs and cats to monkeys and elephants. We have them all! By
           adopting or donating, YOU can make their world a better place!
         </h2>
-        {/* <button
-          type="button"
-          className="hero-button"
-          onClick="location.href='tours.html'"
-        >
+        <Button variant="outline-light" href="/main">
           Explore More &raquo;
-        </button> */}
-        <Button variant="outline-light">Explore More &raquo;</Button>{" "}
-        {/* <button
-          type="button"
-          className="hero-button"
-          onClick="location.href='tours.html'"
-        >
+        </Button>{" "}
+        <Button variant="outline-danger" href="/signup">
           Signup Here! &raquo;
-        </button> */}
-        <Button variant="outline-danger">Signup Here! &raquo;</Button>{" "}
+        </Button>{" "}
       </div>
     </div>
   );
