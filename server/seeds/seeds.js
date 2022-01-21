@@ -12,6 +12,34 @@ db.once("open", async () => {
       password: "password",
       totalDonations: 0,
     },
+    {
+      firstName: "Elizabeth",
+      lastName: "Elevator",
+      email: "Benjamin.email.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Tanya",
+      lastName: "Transistor",
+      email: "Tanya@email.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Denise",
+      lastName: "Diary",
+      email: "Denise@email.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Larry",
+      lastName: "Lightning",
+      email: "Larry@email.com",
+      password: "password",
+      totalDonations: 0,
+    },
 
   ]);
 
