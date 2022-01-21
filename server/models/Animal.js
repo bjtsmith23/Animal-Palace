@@ -12,12 +12,15 @@ const animalSchema = new Schema({
     required: true,
     trim: true,
   },
-  sex: {
+  description: {
     type: String,
     required: true,
     trim: true,
   },
-  description: {
+  image: {
+    type: String,
+  },
+  sex: {
     type: String,
     required: true,
     trim: true,

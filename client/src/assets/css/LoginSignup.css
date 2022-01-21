@@ -1,0 +1,25 @@
+.register-img .img-holder {
+  display: table-cell;
+  width: auto;
+  background: url(../images/home-puppy.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.register-img .form-container {
+  display: table;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.register-img form {
+  display: table-cell;
+  width: 500px;
+  padding: 40px 60px;
+  vertical-align: middle;
+  height: 100vh;
+}
+
+.register-img form h2 {
+  line-height: 1.5;
+}

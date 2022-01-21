@@ -1,13 +1,13 @@
-.main-container {
+.contribution-container {
   position: relative;
   min-height: 100vh;
 }
 
-.main-content {
+.contribution-content {
   padding-bottom: 2.5rem;
 }
 
-.card-container {
+/* .card-container {
   display: inline-flex;
   padding: 10px;
-}
+} */
