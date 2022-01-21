@@ -1,7 +1,7 @@
-const db = require('../config/connection');
-const { User, Animal } = require('../models');
+const db = require("../config/connection");
+const { User, Animal } = require("../models");
 
-db.once('open', async () => {
+db.once("open", async () => {
   await User.deleteMany();
 
   const users = await User.insertMany([
@@ -9,11 +9,11 @@ db.once('open', async () => {
       username: "Brian Smith",
       email: "brian@gmail.com",
       password: "password",
-      totalDonations: 0
-    }
+      totalDonations: 0,
+    },
   ]);
 
-  console.log('users seeded');
+  console.log("users seeded");
 
   await Animal.deleteMany();
 
@@ -22,37 +22,34 @@ db.once('open', async () => {
       type: "Dog",
       name: "Spot",
       sex: "male",
-      description: "Decription goes here",
-      age: "3"
-
-    },
-    {
-      type: "Cat",
-      name: "Dizzy",
-      sex: "female",
-      description: "Decription goes here",
-      age: "5"
-
-    },
-    {
-      type: "Monkey",
-      name: "Caesar",
-      sex: "male",
-      description: "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
-      age: "5"
-
+      description: "Description goes here",
+      age: 3,
     },
     {
       type: "Dog",
       name: "Spot",
       sex: "male",
-      description: "Decription goes here",
-      age: "3"
-
-    }
+      description: "Description goes here",
+      age: 3,
+    },
+    {
+      type: "Cat",
+      name: "Dizzy",
+      sex: "female",
+      description: "Description goes here",
+      age: 5,
+    },
+    {
+      type: "Monkey",
+      name: "Caesar",
+      sex: "male",
+      description:
+        "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
+      age: 5,
+    },
   ]);
 
-  console.log('animals seeded');
+  console.log("animals seeded");
 
   process.exit();
 });
