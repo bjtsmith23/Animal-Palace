@@ -12,6 +12,7 @@ const typeDefs = gql`
 
   type Animal {
     _id: ID
+    type: String
     name: String
     description: String
     image: String
@@ -25,8 +26,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    animals: Animal
-    user: User
+    animals: [Animal]
+    user: [User]
   }
 
   type Mutation {
@@ -37,45 +38,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-// products(category: ID, name: String): [Product]
-// product(_id: ID!): Product
-// order(_id: ID!): Order
-// checkout(products: [ID]!): Checkout
-
-// addOrder(products: [ID]!): Order
-// updateProduct(_id: ID!, quantity: Int!): Product
-
-// type Category {
-//   _id: ID
-//   name: String
-// }
-
-// type Product {
-//   _id: ID
-//   name: String
-//   description: String
-//   image: String
-//   quantity: Int
-//   price: Float
-//   category: Category
-// }
-
-// type User {
-//   _id: ID
-//   firstName: String
-//   lastName: String
-//   email: String
-//   orders: [Order]
-// }
-
-
-// type Order {
-//   _id: ID
-//   purchaseDate: String
-//   products: [Product]
-// }
-
-// type Checkout {
-//   session: ID
-// }
