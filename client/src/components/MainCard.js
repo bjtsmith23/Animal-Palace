@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import MainCardModal from "../components/MainCardModal";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
+import Button from "react-bootstrap/Button";
 
 import exampleDog from "../assets/images/home-puppy.jpg";
 import exampleCat from "../assets/images/home-cat.jpg";
@@ -21,6 +23,9 @@ export default function MainCard() {
       cardAge: 2,
     },
   ];
+
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <>
       {mainContent.map((content, index) => (
@@ -35,9 +40,12 @@ export default function MainCard() {
               <ListGroupItem>Age: {content.cardAge} </ListGroupItem>
             </ListGroup>
             <Card.Body>
-              <Card.Link href="/details">Learn More</Card.Link>
+              <Button variant="primary" onClick={() => setModalShow(true)}>
+                Learn More!
+              </Button>
             </Card.Body>
           </Card>
+          <MainCardModal show={modalShow} onHide={() => setModalShow(false)} />
         </div>
       ))}
     </>
