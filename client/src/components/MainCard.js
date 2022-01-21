@@ -29,7 +29,7 @@ export default function MainCard() {
   return (
     <>
       {mainContent.map((content, index) => (
-        <div className="card-container" key={index}>
+        <div className="card-container m-5 border-0 shadow" key={index}>
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={content.cardImg} />
             <Card.Body>
@@ -40,14 +40,18 @@ export default function MainCard() {
               <ListGroupItem>Age: {content.cardAge} </ListGroupItem>
             </ListGroup>
             <Card.Body>
-              <Button variant="primary" onClick={() => setModalShow(true)}>
+              <Button
+                variant="primary"
+                // data-model-id={}
+                onClick={() => setModalShow(true)}
+              >
                 Learn More!
               </Button>
             </Card.Body>
           </Card>
-          <MainCardModal show={modalShow} onHide={() => setModalShow(false)} />
         </div>
       ))}
+      <MainCardModal show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }
