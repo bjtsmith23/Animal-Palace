@@ -42,7 +42,6 @@ db.once("open", async () => {
       password: "password",
       totalDonations: 0,
     },
-
   ]);
 
   console.log("users seeded");
