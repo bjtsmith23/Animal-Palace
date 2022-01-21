@@ -22,49 +22,49 @@ db.once("open", async () => {
   const animals = await Animal.insertMany([
     {
       type: "Dog",
-      name: "Runner",
+      name: "Runner", 
       sex: "male",
       description: "Found sitting at our front door with no identification.",
       age: 3,
     },
     {
       type: "Dog",
-      name: "Taffy",
+      name: "Taffy", 
       sex: "male",
       description: "Very loving",
       age: 2,
     },
     {
       type: "Dog",
-      name: "Dorothy",
+      name: "Dorothy", 
       sex: "female",
       description: "Loves to play",
       age: 4,
     },
     {
       type: "Dog",
-      name: "Wag",
+      name: "Wag", 
       sex: "male",
       description: "Wag's owner unfortunately passed away.",
       age: 5,
     },
     {
       type: "Dog",
-      name: "Candy",
+      name: "Candy", 
       sex: "female",
       description: "Sweetest animal here.",
       age: 7,
     },
     {
       type: "Cat",
-      name: "Dizzy",
+      name: "Dizzy",  
       sex: "female",
       description: "Always chasing her tail.",
       age: 1,
     },
     {
       type: "Cat",
-      name: "Topper",
+      name: "Topper", 
       sex: "female",
       description: "Rescued from a telephone pole.",
       age: 2,
@@ -78,21 +78,21 @@ db.once("open", async () => {
     },
     {
       type: "Cat",
-      name: "Nosy",
+      name: "Nosy", 
       sex: "female",
       description: "Mose curious pet here.",
       age: 5,
     },
     {
       type: "Cat",
-      name: "Simpson",
+      name: "Simpson", done  
       sex: "male",
       description: "Addicted to watching TV",
       age: 2,
     },
     {
       type: "Monkey",
-      name: "Caesar",
+      name: "Caesar", done
       sex: "male",
       description: "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
       age: 5,
@@ -101,8 +101,7 @@ db.once("open", async () => {
       type: "Monkey",
       name: "Banana",
       sex: "female",
-      description:
-        "A very friendly pet who is happiest when peeling a banana.",
+      description: "A very friendly pet who is happiest when peeling a banana.",
       age: 2,
     },
     {
