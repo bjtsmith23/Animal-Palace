@@ -11,8 +11,8 @@ const resolvers = {
     users: async () => {
       return await User.find({});
     },
-    userId: async (parent, args) => {
-      return await User.findOne(args.userId).populate("Animal");
+    user: async (parent, args) => {
+      return await User.findOne({_id: args._id}).populate("Animal");
     },
   },
 
