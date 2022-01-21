@@ -85,14 +85,14 @@ db.once("open", async () => {
     },
     {
       type: "Cat",
-      name: "Simpson", done  
+      name: "Simpson",
       sex: "male",
       description: "Addicted to watching TV",
       age: 2,
     },
     {
       type: "Monkey",
-      name: "Caesar", done
+      name: "Caesar", 
       sex: "male",
       description: "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
       age: 5,
