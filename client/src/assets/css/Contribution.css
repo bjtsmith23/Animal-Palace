@@ -1,0 +1,13 @@
+.contribution-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.contribution-content {
+  padding-bottom: 2.5rem;
+}
+
+/* .card-container {
+  display: inline-flex;
+  padding: 10px;
+} */
