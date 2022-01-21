@@ -4,12 +4,14 @@ const { signToken } = require("../utils/auth");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
-  
   Query: {
     animals: async () => {
       return await Animal.find({});
     },
-    user: async (parent, args) => {
+    users: async () => {
+      return await User.find({});
+    },
+    userId: async (parent, args) => {
       return await User.findOne(args.userId).populate("Animal");
     },
   },
