@@ -9,15 +9,15 @@ function Navigation() {
   //     if (true) {
   //       return (
   //         <>
-  //           <Nav.Link href="#logout">Logout</Nav.Link>
-  //           <Nav.Link href="#stats">Stats</Nav.Link>
+  //           <Nav.Link href="/logout">Logout</Nav.Link>
+  //           <Nav.Link href="/contribution">Stats</Nav.Link>
   //         </>
   //       );
   //     } else {
   //       return (
   //         <>
-  //           <Nav.Link href="#login">Login</Nav.Link>
-  //           <Nav.Link href="#signup">Signup</Nav.Link>
+  //           <Nav.Link href="/login">Login</Nav.Link>
+  //           <Nav.Link href="/signup">Signup</Nav.Link>
   //         </>
   //       );
   //     }
@@ -30,9 +30,9 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#logout">Logout</Nav.Link>
-            <Nav.Link href="#stats">Stats</Nav.Link>
-            <Nav.Link href="#login">Login</Nav.Link>
-            <Nav.Link href="#signup">Signup</Nav.Link>
+            <Nav.Link href="/contribution">Contribution</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/signup">Signup</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
