@@ -81,8 +81,8 @@ function Login(props) {
             <Button variant="primary" type="submit">
               Submit
             </Button>
-            <h4>Already have an account?</h4>
-            <Link to="/signup">Signup here! &raquo;</Link>
+            <h5 className="have-account">Already have an account?</h5>
+            <Link to="/signup">Signup Here &raquo;</Link>
             <br></br>
             <Link to="/main">&laquo; Explore Again</Link>
           </div>
