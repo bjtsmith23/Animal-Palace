@@ -44,14 +44,26 @@ function Signup(props) {
           //   onSubmit={handleFormSubmit}
         >
           <h2>Signup</h2>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <div className="flex-row space-between my-2">
+          <Form.Group className="mb-3">
+            <div className="d-flex my-2">
               <Form.Control
+                className="mb-3"
+                style={{ width: "12rem" }}
                 type="text"
-                placeholder="Username"
+                placeholder="First"
                 name="text"
                 type="text"
-                // id="text"
+                id="first"
+                // onChange={handleChange}
+              />
+              <Form.Control
+                className="mb-3"
+                style={{ width: "12rem" }}
+                type="text"
+                placeholder="Last"
+                name="text"
+                type="text"
+                id="last"
                 // onChange={handleChange}
               />
             </div>
@@ -78,7 +90,7 @@ function Signup(props) {
                 placeholder="Password"
                 name="password"
                 type="password"
-                // id="pwd"
+                // id="password"
                 // onChange={handleChange}
               />
             </div>
