@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 export default function Details(props) {
   const { modalinfo } = props;
@@ -14,7 +15,7 @@ export default function Details(props) {
       <Row>
         <Col>
           <Card.Img
-            src={modalinfo ? modalinfo.cardImg : ""}
+            src={modalinfo ? modalinfo.image : ""}
             className="detail-img"
           />
         </Col>
@@ -22,25 +23,24 @@ export default function Details(props) {
         <Col>
           <Card>
             <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
+              <Card.Text>{modalinfo ? modalinfo.description : ""}</Card.Text>
             </Card.Body>
           </Card>
           <Card>
             <ListGroup className="list-group-flush">
               <ListGroupItem>
-                Sex: {modalinfo ? modalinfo.cardSex : ""}
+                Sex: {modalinfo ? modalinfo.sex : ""}
               </ListGroupItem>
               <ListGroupItem>
-                Age: {modalinfo ? modalinfo.cardAge : ""}
+                Age: {modalinfo ? modalinfo.age : ""}
               </ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+              {/* <ListGroupItem>Vestibulum at eros</ListGroupItem> MAYBE INCLUDE FAVORITE FOODS??? */}
             </ListGroup>
           </Card>
           <Card.Body className="text-center">
-            <Card.Link href="#">Add to Cart</Card.Link>
+            <Button variant="outline-success" href="#">
+              ❤ Adopt Me! ❤
+            </Button>
           </Card.Body>
         </Col>
       </Row>
