@@ -3,6 +3,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import NavLogo from "../assets/images/brand-img.png";
 
 function Navigation() {
   //   function showNavigation() {
@@ -25,7 +26,16 @@ function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Donation App</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+            alt="dog paw logo"
+            src={NavLogo}
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+          />{" "}
+          Donation App
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
