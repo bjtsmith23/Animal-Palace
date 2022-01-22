@@ -3,10 +3,13 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const animalSchema = new Schema({
-  type: {
+  species: {
     type: String,
     required: true,
-  },  
+  }, 
+  breed: {
+    type: String,
+  }, 
   name: {
     type: String,
     required: true,
