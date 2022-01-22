@@ -14,7 +14,7 @@ export default function Details(props) {
       <Row>
         <Col>
           <Card.Img
-            src={modalinfo ? modalinfo.cardImg : ""}
+            src={modalinfo ? modalinfo.image : ""}
             className="detail-img"
           />
         </Col>
@@ -22,19 +22,16 @@ export default function Details(props) {
         <Col>
           <Card>
             <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
+              <Card.Text>{modalinfo ? modalinfo.description : ""}</Card.Text>
             </Card.Body>
           </Card>
           <Card>
             <ListGroup className="list-group-flush">
               <ListGroupItem>
-                Sex: {modalinfo ? modalinfo.cardSex : ""}
+                Sex: {modalinfo ? modalinfo.sex : ""}
               </ListGroupItem>
               <ListGroupItem>
-                Age: {modalinfo ? modalinfo.cardAge : ""}
+                Age: {modalinfo ? modalinfo.age : ""}
               </ListGroupItem>
               <ListGroupItem>Vestibulum at eros</ListGroupItem>
             </ListGroup>
