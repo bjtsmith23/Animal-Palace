@@ -7,7 +7,7 @@ const animalSchema = new Schema({
     type: String,
     required: true,
   }, 
-  breed: {
+  type: {
     type: String,
   }, 
   name: {
@@ -32,6 +32,9 @@ const animalSchema = new Schema({
     type: Number,
     required: true,
   },
+  favoriteFood: {
+    type: String,
+  }, 
 });
 
 const Animal = mongoose.model("Animal", animalSchema);

@@ -9,8 +9,7 @@ export const QUERY_USER = gql`
       email
       animals {
         _id
-        species
-        breed
+        type
         name
         description
         image
