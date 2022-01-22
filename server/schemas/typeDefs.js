@@ -30,7 +30,7 @@ const typeDefs = gql`
   type Query {
     animals: [Animal]
     users: [User]
-    user(_id: ID): User 
+    user(id: ID): User 
   }
 
   type Mutation {

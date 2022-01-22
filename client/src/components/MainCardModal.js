@@ -15,7 +15,7 @@ export default function MainCardModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {modalinfo ? modalinfo.cardTitle : ""}
+          {modalinfo ? modalinfo.name : ""}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
