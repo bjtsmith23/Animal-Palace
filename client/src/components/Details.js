@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 export default function Details(props) {
   const { modalinfo } = props;
@@ -33,11 +34,13 @@ export default function Details(props) {
               <ListGroupItem>
                 Age: {modalinfo ? modalinfo.age : ""}
               </ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+              {/* <ListGroupItem>Vestibulum at eros</ListGroupItem> MAYBE INCLUDE FAVORITE FOODS??? */}
             </ListGroup>
           </Card>
           <Card.Body className="text-center">
-            <Card.Link href="#">Add to Cart</Card.Link>
+            <Button variant="outline-success" href="#">
+              ❤ Adopt Me! ❤
+            </Button>
           </Card.Body>
         </Col>
       </Row>
