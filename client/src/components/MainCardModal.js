@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Details from "./Details";
 
 export default function MainCardModal(props) {
-  const { modalinfo } = props;
+  const { animalinfo } = props;
 
   return (
     <Modal
@@ -15,7 +15,7 @@ export default function MainCardModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {modalinfo ? modalinfo.name : ""}
+          {animalinfo ? animalinfo.name : ""}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

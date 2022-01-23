@@ -10,4 +10,11 @@
 .card-container {
   display: inline-flex;
   padding: 10px;
+  box-shadow: 0 3px 5px;
+  transition: 0.9s ease;
+}
+
+.card-container:hover {
+  box-shadow: 0 5px 20px;
+  transition: 0.9s ease;
 }
