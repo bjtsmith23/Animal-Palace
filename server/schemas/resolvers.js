@@ -12,11 +12,12 @@ const resolvers = {
       return await User.find({});
     },
     user: async (parent, args) => {
-      return await User.findOne({_id: args._id}).populate("Animal");
+      return await User.findOne({_id: args.id}).populate("Animal");
     },
   },
 
   Mutation: {
+    
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);

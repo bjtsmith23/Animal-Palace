@@ -3,10 +3,13 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const animalSchema = new Schema({
-  type: {
+  species: {
     type: String,
     required: true,
-  },  
+  }, 
+  type: {
+    type: String,
+  }, 
   name: {
     type: String,
     required: true,
@@ -29,6 +32,9 @@ const animalSchema = new Schema({
     type: Number,
     required: true,
   },
+  favoriteFood: {
+    type: String,
+  }, 
 });
 
 const Animal = mongoose.model("Animal", animalSchema);
