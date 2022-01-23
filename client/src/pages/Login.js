@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-// import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
-// import { LOGIN } from "../utils/mutations";
-// import Auth from "../utils/auth";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -10,73 +10,72 @@ import Col from "react-bootstrap/Col";
 import "../assets/css/LoginSignup.css";
 
 function Login(props) {
-  //   const [formState, setFormState] = useState({ email: "", password: "" });
-  //   const [login, { error }] = useMutation(LOGIN);
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-  //   const handleFormSubmit = async (event) => {
-  //     event.preventDefault();
-  //     try {
-  //       const mutationResponse = await login({
-  //         variables: { email: formState.email, password: formState.password },
-  //       });
-  //       const token = mutationResponse.data.login.token;
-  //       Auth.login(token);
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-  //   const handleChange = (event) => {
-  //     const { name, value } = event.target;
-  //     setFormState({
-  //       ...formState,
-  //       [name]: value,
-  //     });
-  //   };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   return (
     <Row className="register-img align-items-center">
       <div className="form-container">
         <Col className="img-holder"></Col>
 
-        <Form
-          className="align-items-center"
-          //   onSubmit={handleFormSubmit}
-        >
+        <Form className="align-items-center" onSubmit={handleFormSubmit}>
           <h2>Login</h2>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3">
             <div className="flex-row space-between my-3">
               <Form.Control
                 type="email"
                 placeholder="Email"
                 name="email"
                 type="email"
-                // id="email"
-                // onChange={handleChange}
+                id="email"
+                onChange={handleChange}
               />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </div>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3">
             <div className="flex-row space-between my-2">
               <Form.Control
                 type="password"
                 placeholder="Password"
                 name="password"
                 type="password"
-                // id="pwd"
-                // onChange={handleChange}
+                id="password"
+                onChange={handleChange}
               />
             </div>
           </Form.Group>
-          {/* {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null} */}
+          {error ? (
+            <div>
+              <p className="error-text">
+                Incorrect credentials. Please try again.
+              </p>
+            </div>
+          ) : null}
           <div className="flex-row flex-end my-4">
             <Button variant="primary" type="submit">
               Submit

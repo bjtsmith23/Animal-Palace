@@ -9,13 +9,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 
 export default function Details(props) {
-  const { modalinfo } = props;
+  const { animalinfo } = props;
   return (
     <Card className="border-0">
       <Row>
         <Col>
           <Card.Img
-            src={modalinfo ? modalinfo.image : ""}
+            src={animalinfo ? animalinfo.image : ""}
             className="detail-img"
           />
         </Col>
@@ -23,16 +23,16 @@ export default function Details(props) {
         <Col>
           <Card>
             <Card.Body>
-              <Card.Text>{modalinfo ? modalinfo.description : ""}</Card.Text>
+              <Card.Text>{animalinfo ? animalinfo.description : ""}</Card.Text>
             </Card.Body>
           </Card>
           <Card>
             <ListGroup className="list-group-flush">
               <ListGroupItem>
-                Sex: {modalinfo ? modalinfo.sex : ""}
+                Sex: {animalinfo ? animalinfo.sex : ""}
               </ListGroupItem>
               <ListGroupItem>
-                Age: {modalinfo ? modalinfo.age : ""}
+                Age: {animalinfo ? animalinfo.age : ""}
               </ListGroupItem>
               {/* <ListGroupItem>Vestibulum at eros</ListGroupItem> MAYBE INCLUDE FAVORITE FOODS??? */}
             </ListGroup>

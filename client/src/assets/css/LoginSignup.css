@@ -27,3 +27,7 @@
 .have-account {
   margin-top: 12px;
 }
+
+html {
+  overflow-y: scroll;
+}
