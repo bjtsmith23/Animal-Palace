@@ -13,8 +13,8 @@ export default function Main() {
   const { loading, data } = useQuery(QUERY_ALL_ANIMALS);
   const animals = data?.animals || [];
 
-  const [selectedAnimal, setSelectedAnimal] = useState();
-
+  // modal state/handlers
+  const [selectedAnimal, setSelectedAnimal] = useState(); // for the modal
   const [modalShow, setModalShow] = useState(false);
   const handleModalShow = (e) => {
     setModalShow(!modalShow);
@@ -27,15 +27,59 @@ export default function Main() {
     (val, index, array) => array.findIndex((t) => t.type === val.type) === index
   );
 
-  // for (var i = 0; i < animalTypes.length; i++) {
-  //   console.log(animalTypes[i].type);
-  // }
-
+  // filter state/handler
+  const [selectedType, setSelectedType] = useState(); // for animal type
   const handleFilterDropdown = (e) => {
     const type = e.target.getAttribute("data-animal-type");
-    const matchingTypeAnimal = animals.filter((animal) => animal.type === type);
-    setSelectedAnimal(matchingTypeAnimal);
-    return matchingTypeAnimal;
+    // matchingTypeAnimal = animals.filter((animal) => animal.type === type);
+    setSelectedType(type);
+    // console.log(matchingTypeAnimal);
+    // return matchingTypeAnimal;
+    // function showMainCard() {
+    //   if (matchingTypeAnimal) {
+    //     return (
+    //       <>
+    //         {animals
+    //           ? animals.map((animal, index) => (
+    //               <div className="card-container m-5 border-0 " key={index}>
+    //                 <MainCard
+    //                   animal={animal}
+    //                   handleModalShow={handleModalShow}
+    //                   animaltypeinfo={selectedType}
+    //                 />
+    //               </div>
+    //             ))
+    //           : null}
+    //       </>
+    //     );
+    //   } else {
+    //     <>
+    //       {animals
+    //         ? animals.map((animal, index) => (
+    //             <div className="card-container m-5 border-0 " key={index}>
+    //               <MainCard animal={animal} handleModalShow={handleModalShow} />
+    //             </div>
+    //           ))
+    //         : null}
+    //     </>;
+    //   }
+    // }
+  };
+
+  const renderAnimalCards = () => {
+    let filteredAnimals = animals;
+    if (selectedType) {
+      filteredAnimals = filteredAnimals.filter(
+        (animal) => animal.type === selectedType
+      );
+    }
+    return filteredAnimals
+      ? filteredAnimals.map((animal, index) => (
+          <div className="card-container m-5 border-0 " key={index}>
+            <MainCard animal={animal} handleModalShow={handleModalShow} />
+          </div>
+        ))
+      : null;
   };
 
   return (
@@ -44,34 +88,28 @@ export default function Main() {
         <Header />
       </div>
       <div className="main-content text-center">
-        <div>ADOPT</div>
+        <h3>ADOPT</h3>
         {loading ? <div>Loading...</div> : null}
-        {animalTypes
-          ? animalTypes.map((animalType, index) => (
-              <div key={index}>
-                <Dropdown
-                  animalType={animalType}
-                  handleFilterDropdown={handleFilterDropdown}
-                />
-              </div>
-            ))
-          : null}
+        <div>
+          {animalTypes
+            ? animalTypes.map((animalType, index) => (
+                <div className="mt-3 px-2 d-inline-block" key={index}>
+                  <Dropdown
+                    animalType={animalType}
+                    handleFilterDropdown={handleFilterDropdown}
+                  />
+                </div>
+              ))
+            : null}
+        </div>
 
-        {animals
-          ? animals.map((animal, index) => (
-              <div className="card-container m-5 border-0 " key={index}>
-                <MainCard animal={animal} handleModalShow={handleModalShow} />
-              </div>
-            ))
-          : null}
+        {/* <div>{showMainCard()}</div> */}
+        {renderAnimalCards()}
 
         {/* {matchingTypeAnimal
           ? matchingTypeAnimal.map((animal, index) => (
               <div className="card-container m-5 border-0 " key={index}>
-                <MainCard
-                  animal={animal}
-                  handleFilterDropdown={handleFilterDropdown}
-                />
+                <MainCard animal={animal} />
               </div>
             ))
           : null} */}
