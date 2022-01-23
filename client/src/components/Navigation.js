@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavLogo from "../assets/images/brand-img.png";
+import "../assets/css/Navigation.css";
 
 function Navigation() {
   function showNavigation() {
@@ -37,7 +38,7 @@ function Navigation() {
     }
   }
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="white" expand="lg">
       <Container>
         <Navbar.Brand href="/">
           <img
