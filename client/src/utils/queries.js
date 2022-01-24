@@ -40,6 +40,7 @@ export const QUERY_ALL_ANIMALS = gql`
       image
       sex
       age
+      favoriteFood
     }
   }
 `;
