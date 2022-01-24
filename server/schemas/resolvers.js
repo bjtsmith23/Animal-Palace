@@ -11,11 +11,9 @@ const resolvers = {
     users: async () => {
       return await User.find({});
     },
-    user: async (parent, args, context) => {
-      if (context.user) {
+    user: async (parent, args) => {
         const user = await User.findById(context.user._id);
         return user;
-      }
     },
   },
 
