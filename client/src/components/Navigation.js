@@ -14,6 +14,7 @@ function Navigation() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <Nav.Link href="/donate">Donate</Nav.Link>
               <Nav.Link href="/main">Adopt</Nav.Link>
               <Nav.Link href="/contribution">Contribution</Nav.Link>
               <Nav.Link href="/main" onClick={() => Auth.logout()}>

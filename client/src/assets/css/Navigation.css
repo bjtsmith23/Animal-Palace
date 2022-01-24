@@ -13,3 +13,7 @@
 .navbar-light .navbar-nav a.nav-link:hover {
   color: green;
 }
+
+nav {
+  display: contents;
+}

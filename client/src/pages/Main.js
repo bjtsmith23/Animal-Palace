@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Dropdown from "../components/Dropdown";
+import FilterButton from "../components/FilterButton";
 import MainCard from "../components/MainCard";
 import MainCardModal from "../components/MainCardModal";
 import "../assets/css/Main.css";
@@ -23,47 +23,17 @@ export default function Main() {
     setSelectedAnimal(matchingContent);
   };
 
+  // filtered unique animal types to be mapped through to create filter buttons
   const animalTypes = animals.filter(
     (val, index, array) => array.findIndex((t) => t.type === val.type) === index
   );
 
   // filter state/handler
   const [selectedType, setSelectedType] = useState(); // for animal type
-  const handleFilterDropdown = (e) => {
+  const handleFilterButton = (e) => {
     const type = e.target.getAttribute("data-animal-type");
     // matchingTypeAnimal = animals.filter((animal) => animal.type === type);
     setSelectedType(type);
-    // console.log(matchingTypeAnimal);
-    // return matchingTypeAnimal;
-    // function showMainCard() {
-    //   if (matchingTypeAnimal) {
-    //     return (
-    //       <>
-    //         {animals
-    //           ? animals.map((animal, index) => (
-    //               <div className="card-container m-5 border-0 " key={index}>
-    //                 <MainCard
-    //                   animal={animal}
-    //                   handleModalShow={handleModalShow}
-    //                   animaltypeinfo={selectedType}
-    //                 />
-    //               </div>
-    //             ))
-    //           : null}
-    //       </>
-    //     );
-    //   } else {
-    //     <>
-    //       {animals
-    //         ? animals.map((animal, index) => (
-    //             <div className="card-container m-5 border-0 " key={index}>
-    //               <MainCard animal={animal} handleModalShow={handleModalShow} />
-    //             </div>
-    //           ))
-    //         : null}
-    //     </>;
-    //   }
-    // }
   };
 
   const renderAnimalCards = () => {
@@ -94,25 +64,16 @@ export default function Main() {
           {animalTypes
             ? animalTypes.map((animalType, index) => (
                 <div className="mt-3 px-2 d-inline-block" key={index}>
-                  <Dropdown
+                  <FilterButton
                     animalType={animalType}
-                    handleFilterDropdown={handleFilterDropdown}
+                    handleFilterButton={handleFilterButton}
                   />
                 </div>
               ))
             : null}
         </div>
 
-        {/* <div>{showMainCard()}</div> */}
         {renderAnimalCards()}
-
-        {/* {matchingTypeAnimal
-          ? matchingTypeAnimal.map((animal, index) => (
-              <div className="card-container m-5 border-0 " key={index}>
-                <MainCard animal={animal} />
-              </div>
-            ))
-          : null} */}
 
         <MainCardModal
           show={modalShow}

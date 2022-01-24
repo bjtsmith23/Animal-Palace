@@ -1,34 +1,12 @@
 import React from "react";
-// import MainCardModal from "../components/MainCardModal";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
 
-// import { useQuery } from "@apollo/client";
-// import { QUERY_ALL_ANIMALS } from "../utils/queries";
-
 export default function MainCard({ animal, handleModalShow }) {
-  // const { loading, data } = useQuery(QUERY_ALL_ANIMALS);
-  // const animals = data?.animals || [];
-
-  // console.log(animals);
-
-  // const [selectedModal, setSelectedModal] = useState();
-  // const [modalShow, setModalShow] = useState(false);
-  // const handleModalShow = (e) => {
-  //   setModalShow(!modalShow);
-  //   const id = e.target.getAttribute("data-modal-id");
-  //   const matchingContent = animals.filter((animal) => animal._id === id)[0];
-  //   setSelectedModal(matchingContent);
-  // };
   return (
     <>
-      {/* {loading ? <div>Loading...</div> : null} */}
-
-      {/* {animals
-        ? animals.map((animal, index) => (
-            <div className="card-container m-5 border-0 " key={index}> */}
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={animal.image} />
         <Card.Body>
@@ -48,15 +26,6 @@ export default function MainCard({ animal, handleModalShow }) {
           </Button>
         </Card.Body>
       </Card>
-      {/* </div>
-          ))
-        : null} */}
-
-      {/* <MainCardModal
-        show={modalShow}
-        modalinfo={selectedModal}
-        onHide={() => setModalShow(false)}
-      /> */}
     </>
   );
 }
