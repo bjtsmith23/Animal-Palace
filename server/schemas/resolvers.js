@@ -11,11 +11,6 @@ const resolvers = {
     users: async () => {
       return await User.find({}).populate("adoptedAnimals");
     },
-    // userById: async (parent, args, context) => {
-    //   const user = await User.findOne({ _id: args._id }).populate(
-    //     "adoptedAnimals"
-    //   );
-    // },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate(

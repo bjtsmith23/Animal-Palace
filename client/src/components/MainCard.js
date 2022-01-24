@@ -8,7 +8,8 @@ export default function MainCard({ animal, handleModalShow }) {
   return (
     <>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={animal.image} />
+        <Card.Img variant="top" src={`/images/${animal.image}`} />
+        {/* wherever there is animal.image change to above code */}
         <Card.Body>
           <Card.Title>{animal.name}</Card.Title>
         </Card.Body>
