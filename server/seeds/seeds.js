@@ -10,35 +10,63 @@ db.once("open", async () => {
     {
       firstName: "Benjamin",
       lastName: "Bonfire",
-      email: "benjamin@email.com",
+      email: "benjamin@gmail.com",
       password: "password",
       totalDonations: 0,
     },
     {
       firstName: "Elizabeth",
       lastName: "Elevator",
-      email: "elizabeth@email.com",
+      email: "elizabeth@gmail.com",
       password: "password",
       totalDonations: 0,
     },
     {
       firstName: "Tanya",
       lastName: "Transistor",
-      email: "tanya@email.com",
+      email: "tanya@gmail.com",
       password: "password",
       totalDonations: 0,
     },
     {
       firstName: "Denise",
       lastName: "Diary",
-      email: "denise@email.com",
+      email: "denise@gmail.com",
       password: "password",
       totalDonations: 0,
     },
     {
       firstName: "Larry",
       lastName: "Lightning",
-      email: "larry@email.com",
+      email: "larry@gmail.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Betty",
+      lastName: "Chen",
+      email: "bettychen@gmail.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Ken",
+      lastName: "Crawford",
+      email: "kencrawford@gmail.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Brian",
+      lastName: "Smith",
+      email: "briansmith@gmail.com",
+      password: "password",
+      totalDonations: 0,
+    },
+    {
+      firstName: "Marc",
+      lastName: "Negron",
+      email: "marcnegron@gmail.com",
       password: "password",
       totalDonations: 0,
     },
@@ -51,7 +79,8 @@ db.once("open", async () => {
       type: "Dog",
       name: "Runner",
       sex: "M",
-      description: "Runner was found at our font entrance on morning. There was tag or chip identification but is most appreciative of our attention.",
+      description:
+        "Runner was found at our front entrance one morning. There was no tag or chip identification but is most appreciative of our attention.",
       favoriteFood: "Pancakes and sausage",
       age: 3,
       image: "http://localhost:3001/images/dogrunner.jpg",
@@ -60,7 +89,8 @@ db.once("open", async () => {
       type: "Dog",
       name: "Taffy",
       sex: "M",
-      description: "Everytime we pass by her cage, her tale is wagging always hoping for attention. She gets even more excited whan allowed to run freely.",
+      description:
+        "Every time we pass by her cage, her tale is wagging always hoping for attention. She gets even more excited when allowed to run freely.",
       favoriteFood: "Purina",
       age: 2,
       image: "http://localhost:3001/images/dogtaffy.jpg",
@@ -69,7 +99,8 @@ db.once("open", async () => {
       type: "Dog",
       name: "Dorothy",
       sex: "F",
-      description: "Every time she sees a ball, she becomes quite excited when playing. After retrieving the thrown ball, she expects us to chase her before returning it.",
+      description:
+        "Every time she sees a ball, she becomes quite excited when playing. After retrieving the thrown ball, she expects us to chase her before returning it.",
       favoriteFood: "Any brand of dog food",
       age: 4,
       image: "http://localhost:3001/images/dogdorothy.jpg",
@@ -78,7 +109,8 @@ db.once("open", async () => {
       type: "Dog",
       name: "Wag",
       sex: "M",
-      description: "Wag has been a bit depressed since losing his owner. However, he loves to cuddle quietly.",
+      description:
+        "Wag has been a bit depressed since losing his owner. However, he loves to cuddle quietly.",
       favoriteFood: "Cheese sandwich",
       age: 5,
       image: "http://localhost:3001/images/dogwag.jpg",
@@ -87,7 +119,8 @@ db.once("open", async () => {
       type: "Dog",
       name: "Candy",
       sex: "F",
-      description: "Everyone who sees Candy loves her immediately. Her eyes makes all of us melt.",
+      description:
+        "Everyone who sees Candy loves her immediately. Her eyes makes all of us melt.",
       favoriteFood: "Beans",
       age: 7,
       image: "http://localhost:3001/images/dogcandy.jpg",
@@ -96,7 +129,8 @@ db.once("open", async () => {
       type: "Cat",
       name: "Dizzy",
       sex: "F",
-      description: "Allways running and jumping. It is impossible for her to remain still. Often whe will chase her tail for long periods. She should have been named Merry Go Round.",
+      description:
+        "Always running and jumping. It is impossible for her to remain still. Often whe will chase her tail for long periods. She should have been named Merry Go Round.",
       favoriteFood: "Fish",
       age: 1,
       image: "http://localhost:3001/images/catdizzy.jpg",
@@ -105,7 +139,8 @@ db.once("open", async () => {
       type: "Cat",
       name: "Topper",
       sex: "M",
-      description: "Reported by a concerned citizen, Topper was found at the top of a telephone pole. He started purring immediately when the fireman rescued him.",
+      description:
+        "Reported by a concerned citizen, Topper was found at the top of a telephone pole. He started purring immediately when the fireman rescued him.",
       favoriteFood: "Chicken tenders",
       age: 2,
       image: "http://localhost:3001/images/cattopper.jpg",
@@ -114,7 +149,8 @@ db.once("open", async () => {
       type: "Cat",
       name: "Cauliflower",
       sex: "F",
-      description: "Cauliflower pretends to ignore all all of us for a few minutes. Then when we aren't looking he rubs hinself against one of us.",
+      description:
+        "Cauliflower pretends to ignore all all of us for a few minutes. Then when we aren't looking he rubs hinself against one of us.",
       favoriteFood: "Table scraps",
       age: 1,
       image: "http://localhost:3001/images/catcauliflower.jpg",
@@ -123,7 +159,8 @@ db.once("open", async () => {
       type: "Cat",
       name: "Nosy",
       sex: "F",
-      description: "Anytime anything new is added inside her cage, she examines it endlessly. She is still alive even though she is the most curious animal here.",
+      description:
+        "Anytime anything new is added inside her cage, she examines it endlessly. She is still alive even though she is the most curious animal here.",
       favoriteFood: "Most cat foods",
       age: 5,
       image: "http://localhost:3001/images/catnosy.jpg",
@@ -132,7 +169,8 @@ db.once("open", async () => {
       type: "Cat",
       name: "Simpson",
       sex: "M",
-      description: "When ever the TV set is on he will watch it endlessly. Sometimes he will even ignore his food when Simpsons is on.",
+      description:
+        "When ever the TV set is on he will watch it endlessly. Sometimes he will even ignore his food when Simpsons is on.",
       favoriteFood: "Tuna fish",
       age: 2,
       image: "http://localhost:3001/images/catsimpson.jpg",
@@ -151,7 +189,8 @@ db.once("open", async () => {
       type: "Monkey",
       name: "Banana",
       sex: "F",
-      description: "Banana will sometimes make the strangest faces when somebody new walks by. And when he is given a banana, he screaches in ecstasy.",
+      description:
+        "Banana will sometimes make the strangest faces when somebody new walks by. And when he is given a banana, he screaches in ecstasy.",
       favoriteFood: "Cat food and banana",
       age: 2,
       image: "http://localhost:3001/images/monkeybanana.jpg",
@@ -160,7 +199,8 @@ db.once("open", async () => {
       type: "Monkey",
       name: "Tenor",
       sex: "F",
-      description: "Tenor will always return a screach from Banana - but it always has to be louder and longer. She also loves mimic faces and gestures made by any passerby.",
+      description:
+        "Tenor will always return a screech from Banana - but it always has to be louder and longer. She also loves mimic faces and gestures made by any passerby.",
       favoriteFood: "Most vegetables",
       age: 2,
       image: "http://localhost:3001/images/monkeytenor.jpg",
@@ -169,7 +209,8 @@ db.once("open", async () => {
       type: "Bird",
       name: "Apollo",
       sex: "M",
-      description: "Apollo was found trapped in a bush with a broken leg. He resisted when rescued but eventually calmed down during treatment and is starting to enjoy our attention.",
+      description:
+        "Apollo was found trapped in a bush with a broken leg. He resisted when rescued but eventually calmed down during treatment and is starting to enjoy our attention.",
       favoriteFood: "Sun flower seeds",
       age: 2,
       image: "http://localhost:3001/images/birdapollo.jpg",
@@ -178,7 +219,8 @@ db.once("open", async () => {
       type: "Bird",
       name: "Feather",
       sex: "M",
-      description: "This parrot lost its home when his owner was forced to move to live with another pet-free family. He is slowly getting more responsive to others.",
+      description:
+        "This parrot lost its home when his owner was forced to move to live with another pet-free family. He is slowly getting more responsive to others.",
       favoriteFood: "Uncooked corn and seed mix",
       age: 2,
       image: "http://localhost:3001/images/birdfeather.jpg",
@@ -187,7 +229,8 @@ db.once("open", async () => {
       type: "Tiger",
       name: "Lucky",
       sex: "M",
-      description: "Lucky was rescued from an illegal smuggling ring. He is still a wild animal but all of our staff seem to adore him the most.",
+      description:
+        "Lucky was rescued from an illegal smuggling ring. He is still a wild animal but all of our staff seem to adore him the most.",
       favoriteFood: "Special diet beef with occasional mouse",
       age: 2,
       image: "http://localhost:3001/images/tigerlucky.jpg",
@@ -196,13 +239,19 @@ db.once("open", async () => {
       type: "Rabbit",
       name: "Cotton",
       sex: "F",
-      description: "Cotton was given to us after she was raised as a 4th grade pet but no family volunteered to take care of her over the summer. She is anything but shy and loves all the attention she can get.",
+      description:
+        "Cotton was given to us after she was raised as a 4th grade pet but no family volunteered to take care of her over the summer. She is anything but shy and loves all the attention she can get.",
       favoriteFood: "All kinds of vegetable leaves",
       age: 1,
       image: "http://localhost:3001/images/rabbitcotton.jpg",
     },
   ]);
 
+  for (newUser of users) {
+    const randomIndex = Math.floor(Math.random() * animals.length);
+    newUser.adoptedAnimals.push(animals[randomIndex]._id);
+    await newUser.save();
+  }
   console.log("animals seeded");
 
   process.exit();

@@ -9,6 +9,7 @@ const typeDefs = gql`
     email: String
     password: String
     totalDonations: Int
+    adoptedAnimals: [Animal]
   }
 
   type Animal {
@@ -19,6 +20,7 @@ const typeDefs = gql`
     image: String
     sex: String
     age: Int
+    favoriteFood: String
   }
 
   type Auth {
@@ -29,13 +31,13 @@ const typeDefs = gql`
   type Query {
     animals: [Animal]
     users: [User]
-    user(id: ID): User 
+    user(_id: ID): User 
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    login(email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth  
   }
 `;
 
