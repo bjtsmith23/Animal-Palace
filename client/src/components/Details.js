@@ -1,12 +1,12 @@
 import React from "react";
 import "../assets/css/Details.css";
-
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
+// import BeAMemberButton from "./BeAMemberButton";
 
 export default function Details(props) {
   const { animalinfo } = props;
@@ -34,13 +34,13 @@ export default function Details(props) {
               <ListGroupItem>
                 Age: {animalinfo ? animalinfo.age : ""}
               </ListGroupItem>
-              {/* <ListGroupItem>Vestibulum at eros</ListGroupItem> MAYBE INCLUDE FAVORITE FOODS??? */}
+              <ListGroupItem>
+                Favorite Food: {animalinfo ? animalinfo.favoriteFood : ""}
+              </ListGroupItem>
             </ListGroup>
           </Card>
           <Card.Body className="text-center">
-            <Button variant="outline-success" href="#">
-              ❤ Adopt Me! ❤
-            </Button>
+            <Button variant="outline-success">❤ Adopt Me! ❤</Button>
           </Card.Body>
         </Col>
       </Row>
