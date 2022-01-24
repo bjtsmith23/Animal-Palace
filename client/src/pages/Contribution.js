@@ -19,7 +19,7 @@ export default function Contribution() {
   if (data) {
     user = data.user;
   }
-  console.log(user.totalDonations);
+  console.log(user);
 
   return (
     <div className="contribution-container">
@@ -28,6 +28,7 @@ export default function Contribution() {
       </div>
       <div className="contribution-content text-center">
         <h1 className="my-4">
+          {" "}
           {user.firstName} {user.lastName}
         </h1>
         <Container>
