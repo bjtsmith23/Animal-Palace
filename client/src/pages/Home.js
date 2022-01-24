@@ -1,11 +1,9 @@
 import React from "react";
 import "../assets/css/Home.css";
 import Button from "react-bootstrap/Button";
-// import HomeCarousel from "../components/HomeCarousel";
 
 const Home = () => {
   return (
-    // <HomeCarousel/>
     <div className="hero">
       <div className="hero-content">
         <h1 className="hero-title">Discover the World of Animals</h1>

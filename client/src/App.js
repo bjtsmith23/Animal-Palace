@@ -1,5 +1,5 @@
 // import "./App.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   ApolloClient,
@@ -14,7 +14,14 @@ import Main from "./pages/Main";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Contribution from "./pages/Contribution";
+import Donate from "./pages/Donate";
 
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51KLThrKTqyKGrYgVVrsKQTTMxSDlTqtuBSF9JcxrJzKFlwOHVKU2BteNUBq1m1cw0wPE3gfCIZXNHMOJzKJUnjjk00xacvbzIb"
+);
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -35,15 +42,33 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [clientSecret, setClientSecret] = useState("");
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+    })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
+  const appearance = {
+    theme: "stripe",
+  };
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/main" component={Main} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/contribution" component={Contribution} />
+          <Elements stripe={stripePromise}>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/main" component={Main} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/contribution" component={Contribution} />
+            <Route exact path="/donate" component={Donate} />
+          </Elements>
         </Switch>
       </Router>
     </ApolloProvider>

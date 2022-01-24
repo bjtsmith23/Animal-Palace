@@ -1,7 +1,7 @@
 .register-img .img-holder {
   display: table-cell;
   width: auto;
-  background: url(../images/home-puppy.jpg);
+  background: url(../images/loginsignupdog.jpg);
   background-size: cover;
   background-position: center;
 }
