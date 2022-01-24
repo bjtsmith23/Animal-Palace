@@ -83,7 +83,7 @@ db.once("open", async () => {
         "Runner was found at our front entrance one morning. There was no tag or chip identification but is most appreciative of our attention.",
       favoriteFood: "Pancakes and sausage",
       age: 3,
-      image: "http://localhost:3001/images/dogrunner.jpg",
+      image: "dogrunner.jpg",
     },
     {
       type: "Dog",
@@ -93,7 +93,7 @@ db.once("open", async () => {
         "Every time we pass by her cage, her tale is wagging always hoping for attention. She gets even more excited when allowed to run freely.",
       favoriteFood: "Purina",
       age: 2,
-      image: "http://localhost:3001/images/dogtaffy.jpg",
+      image: "dogtaffy.jpg",
     },
     {
       type: "Dog",
@@ -103,7 +103,7 @@ db.once("open", async () => {
         "Every time she sees a ball, she becomes quite excited when playing. After retrieving the thrown ball, she expects us to chase her before returning it.",
       favoriteFood: "Any brand of dog food",
       age: 4,
-      image: "http://localhost:3001/images/dogdorothy.jpg",
+      image: "dogdorothy.jpg",
     },
     {
       type: "Dog",
@@ -113,7 +113,7 @@ db.once("open", async () => {
         "Wag has been a bit depressed since losing his owner. However, he loves to cuddle quietly.",
       favoriteFood: "Cheese sandwich",
       age: 5,
-      image: "http://localhost:3001/images/dogwag.jpg",
+      image: "dogwag.jpg",
     },
     {
       type: "Dog",
@@ -123,7 +123,7 @@ db.once("open", async () => {
         "Everyone who sees Candy loves her immediately. Her eyes makes all of us melt.",
       favoriteFood: "Beans",
       age: 7,
-      image: "http://localhost:3001/images/dogcandy.jpg",
+      image: "dogcandy.jpg",
     },
     {
       type: "Cat",
@@ -133,7 +133,7 @@ db.once("open", async () => {
         "Always running and jumping. It is impossible for her to remain still. Often whe will chase her tail for long periods. She should have been named Merry Go Round.",
       favoriteFood: "Fish",
       age: 1,
-      image: "http://localhost:3001/images/catdizzy.jpg",
+      image: "catdizzy.jpg",
     },
     {
       type: "Cat",
@@ -143,7 +143,7 @@ db.once("open", async () => {
         "Reported by a concerned citizen, Topper was found at the top of a telephone pole. He started purring immediately when the fireman rescued him.",
       favoriteFood: "Chicken tenders",
       age: 2,
-      image: "http://localhost:3001/images/cattopper.jpg",
+      image: "cattopper.jpg",
     },
     {
       type: "Cat",
@@ -153,7 +153,7 @@ db.once("open", async () => {
         "Cauliflower pretends to ignore all all of us for a few minutes. Then when we aren't looking he rubs hinself against one of us.",
       favoriteFood: "Table scraps",
       age: 1,
-      image: "http://localhost:3001/images/catcauliflower.jpg",
+      image: "catcauliflower.jpg",
     },
     {
       type: "Cat",
@@ -163,7 +163,7 @@ db.once("open", async () => {
         "Anytime anything new is added inside her cage, she examines it endlessly. She is still alive even though she is the most curious animal here.",
       favoriteFood: "Most cat foods",
       age: 5,
-      image: "http://localhost:3001/images/catnosy.jpg",
+      image: "catnosy.jpg",
     },
     {
       type: "Cat",
@@ -173,7 +173,7 @@ db.once("open", async () => {
         "When ever the TV set is on he will watch it endlessly. Sometimes he will even ignore his food when Simpsons is on.",
       favoriteFood: "Tuna fish",
       age: 2,
-      image: "http://localhost:3001/images/catsimpson.jpg",
+      image: "catsimpson.jpg",
     },
     {
       type: "Monkey",
@@ -183,7 +183,7 @@ db.once("open", async () => {
         "Caesar was rescued from South Africa after his home was destroyed during deforestation by the local community.",
       favoriteFood: "Oatmeal and banana",
       age: 5,
-      image: "http://localhost:3001/images/monkeycaesar.jpg",
+      image: "monkeycaesar.jpg",
     },
     {
       type: "Monkey",
@@ -193,7 +193,7 @@ db.once("open", async () => {
         "Banana will sometimes make the strangest faces when somebody new walks by. And when he is given a banana, he screaches in ecstasy.",
       favoriteFood: "Cat food and banana",
       age: 2,
-      image: "http://localhost:3001/images/monkeybanana.jpg",
+      image: "monkeybanana.jpg",
     },
     {
       type: "Monkey",
@@ -203,7 +203,7 @@ db.once("open", async () => {
         "Tenor will always return a screech from Banana - but it always has to be louder and longer. She also loves mimic faces and gestures made by any passerby.",
       favoriteFood: "Most vegetables",
       age: 2,
-      image: "http://localhost:3001/images/monkeytenor.jpg",
+      image: "monkeytenor.jpg",
     },
     {
       type: "Bird",
@@ -213,7 +213,7 @@ db.once("open", async () => {
         "Apollo was found trapped in a bush with a broken leg. He resisted when rescued but eventually calmed down during treatment and is starting to enjoy our attention.",
       favoriteFood: "Sun flower seeds",
       age: 2,
-      image: "http://localhost:3001/images/birdapollo.jpg",
+      image: "birdapollo.jpg",
     },
     {
       type: "Bird",
@@ -223,7 +223,7 @@ db.once("open", async () => {
         "This parrot lost its home when his owner was forced to move to live with another pet-free family. He is slowly getting more responsive to others.",
       favoriteFood: "Uncooked corn and seed mix",
       age: 2,
-      image: "http://localhost:3001/images/birdfeather.jpg",
+      image: "birdfeather.jpg",
     },
     {
       type: "Tiger",
@@ -233,7 +233,7 @@ db.once("open", async () => {
         "Lucky was rescued from an illegal smuggling ring. He is still a wild animal but all of our staff seem to adore him the most.",
       favoriteFood: "Special diet beef with occasional mouse",
       age: 2,
-      image: "http://localhost:3001/images/tigerlucky.jpg",
+      image: "tigerlucky.jpg",
     },
     {
       type: "Rabbit",
@@ -243,7 +243,7 @@ db.once("open", async () => {
         "Cotton was given to us after she was raised as a 4th grade pet but no family volunteered to take care of her over the summer. She is anything but shy and loves all the attention she can get.",
       favoriteFood: "All kinds of vegetable leaves",
       age: 1,
-      image: "http://localhost:3001/images/rabbitcotton.jpg",
+      image: "rabbitcotton.jpg",
     },
   ]);
 
