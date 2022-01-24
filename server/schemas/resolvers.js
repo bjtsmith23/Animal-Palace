@@ -9,7 +9,7 @@ const resolvers = {
       return await Animal.find({});
     },
     users: async () => {
-      return await User.find({});
+      return await User.find({}).populate("adoptedAnimals");
     },
     user: async (parent, args, context) => {
         const user = await User.findOne({_id:args._id}).populate("adoptedAnimals");
