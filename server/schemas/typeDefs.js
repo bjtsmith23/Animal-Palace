@@ -52,6 +52,7 @@ const typeDefs = gql`
       password: String
     ): User
     addUserAnimal(animalId: ID): User
+    addUserDonation(donation: Int): User
     login(email: String!, password: String!): Auth
   }
 `;
