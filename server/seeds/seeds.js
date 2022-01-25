@@ -10,57 +10,67 @@ db.once("open", async () => {
     {
       firstName: "Benjamin",
       lastName: "Bonfire",
-      email: "benjamin@gmail.com",
+      email: "benjamin@email.com",
       password: "password",
+      totalDonations: 25,
     },
     {
       firstName: "Elizabeth",
       lastName: "Elevator",
-      email: "elizabeth@gmail.com",
+      email: "elizabeth@email.com",
       password: "password",
+      totalDonations: 0,
     },
     {
       firstName: "Tanya",
       lastName: "Transistor",
-      email: "tanya@gmail.com",
+      email: "tanya@email.com",
       password: "password",
+      totalDonations: 75,
     },
     {
       firstName: "Denise",
       lastName: "Diary",
-      email: "denise@gmail.com",
+      email: "denise@email.com",
       password: "password",
+      totalDonations: 100,
     },
     {
       firstName: "Larry",
       lastName: "Lightning",
-      email: "larry@gmail.com",
+      email: "larry@email.com",
       password: "password",
+      totalDonations: 0,
     },
     {
       firstName: "Betty",
       lastName: "Chen",
       email: "bettychen@gmail.com",
       password: "password",
+      totalDonations: 500,
     },
     {
       firstName: "Ken",
       lastName: "Crawford",
       email: "kencrawford@gmail.com",
       password: "password",
+      totalDonations: 0,
     },
     {
       firstName: "Brian",
       lastName: "Smith",
       email: "briansmith@gmail.com",
       password: "password",
+      totalDonations: 50,
     },
     {
       firstName: "Marc",
       lastName: "Negron",
       email: "marcnegron@gmail.com",
       password: "password",
+      totalDonations: 35,
     },
+
   ]);
 
   console.log("users seeded");
