@@ -69,14 +69,14 @@ const resolvers = {
       if (context.user) {
         // console.log(context.user);
         return await User.findByIdAndUpdate(
-          context.user._id,
+          { _id: context.user._id },
           {
             $inc: { totalDonations: donation },
           },
           {
             new: true,
           }
-        ).populate("totalDonations");
+        );
       }
     },
     updateUser: async (parent, args, context) => {
