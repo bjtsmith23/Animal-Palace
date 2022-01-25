@@ -70,6 +70,7 @@ db.once("open", async () => {
       password: "password",
       totalDonations: 35,
     },
+
   ]);
 
   console.log("users seeded");

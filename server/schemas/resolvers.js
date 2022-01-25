@@ -45,7 +45,6 @@ const resolvers = {
       return { session: session.id };
     },
   },
-
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -64,6 +63,20 @@ const resolvers = {
             new: true,
           }
         ).populate("adoptedAnimals");
+      }
+    },
+    addUserDonation: async (parent, { donation }, context) => {
+      if (context.user) {
+        // console.log(context.user);
+        return await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $inc: { totalDonations: donation },
+          },
+          {
+            new: true,
+          }
+        );
       }
     },
     updateUser: async (parent, args, context) => {
