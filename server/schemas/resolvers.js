@@ -1,7 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Animal } = require("../models");
 const { signToken } = require("../utils/auth");
-// const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const resolvers = {
   Query: {
@@ -18,6 +18,31 @@ const resolvers = {
         );
         return user;
       }
+    },
+    checkout: async (parent, args, context) => {
+      console.log("I am here");
+      const url = new URL(context.headers.referer).origin;
+      const initialDonation = args.initialDonation;
+      console.log(`initialDonation=${initialDonation}`);
+      const product = await stripe.products.create({
+        name: "Donation",
+        description: "One time donation",
+      });
+      const price = await stripe.prices.create({
+        product: product.id,
+        unit_amount: initialDonation * 100,
+        currency: "usd",
+      });
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        mode: "payment",
+        line_items: [{ price: price.id, quantity: 1 }],
+        success_url: url,
+        cancel_url: url,
+      });
+      console.log(session);
+      return { session: session.id };
     },
   },
 
