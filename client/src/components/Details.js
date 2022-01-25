@@ -15,7 +15,7 @@ export default function Details(props) {
       <Row>
         <Col>
           <Card.Img
-            src={animalinfo ? animalinfo.image : ""}
+            src={animalinfo ? `/images/${animalinfo.image}` : ""}
             className="detail-img"
           />
         </Col>
