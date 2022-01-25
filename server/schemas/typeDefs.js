@@ -51,8 +51,10 @@ const typeDefs = gql`
       email: String
       password: String
     ): User
+    addUserAnimal(animalId: ID): User
     login(email: String!, password: String!): Auth
   }
 `;
 
 module.exports = typeDefs;
+
