@@ -23,15 +23,16 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  totalDonations: {
-    type: Number,
-  },
   adoptedAnimals: [
     {
       type: Schema.Types.ObjectId,
       ref: "Animal",
     },
   ],
+  totalDonations: {
+    type: Number,
+    default: 0,
+  },
 });
 // set up pre-save middleware to create password
 userSchema.pre("save", async function (next) {
