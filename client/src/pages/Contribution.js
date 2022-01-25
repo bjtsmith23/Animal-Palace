@@ -19,7 +19,9 @@ export default function Contribution() {
   if (data) {
     user = data.user;
   }
-  console.log(user);
+
+  let adoptedAnimalArr = user.adoptedAnimals;
+  console.log(adoptedAnimalArr);
 
   return (
     <div className="contribution-container">
@@ -37,7 +39,9 @@ export default function Contribution() {
               <Card style={{ width: "25rem" }}>
                 <Card.Header as="h5">Total Animals Adopted: </Card.Header>
                 <Card.Body>
-                  <Card.Title>10</Card.Title>
+                  <Card.Title>
+                    {user.adoptedAnimals ? user.adoptedAnimals.length : 0}
+                  </Card.Title>
                   <Card.Text>Wow! Great job!</Card.Text>
                 </Card.Body>
               </Card>
@@ -55,7 +59,13 @@ export default function Contribution() {
         </Container>
         <Container>
           <h3 className="mt-4">Your List of Adopted Animals!</h3>
-          <ContributionCard />
+          {adoptedAnimalArr
+            ? adoptedAnimalArr.map((animalAdopted, index) => (
+                <div className="card-container m-4 border-0 shadow" key={index}>
+                  <ContributionCard animalAdopted={animalAdopted} />
+                </div>
+              ))
+            : null}
         </Container>
       </div>
       <div className="footer">

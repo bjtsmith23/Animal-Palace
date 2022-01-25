@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavLogo from "../assets/images/brand-img.png";
 import "../assets/css/Navigation.css";
+import Donate from "../pages/Donate";
 
 function Navigation() {
   function showNavigation() {
@@ -14,7 +15,10 @@ function Navigation() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/donate">Donate</Nav.Link>
+              <Donate donation={10}>$10</Donate>
+              <Donate donation={20}>$20</Donate>
+              <Donate donation={50}>$50</Donate>
+              <Donate donation={100}>$100</Donate>
               <Nav.Link href="/main">Adopt</Nav.Link>
               <Nav.Link href="/contribution">Contribution</Nav.Link>
               <Nav.Link href="/main" onClick={() => Auth.logout()}>
@@ -30,7 +34,10 @@ function Navigation() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/donate">Donate</Nav.Link>
+              <Donate donation={10}>$10</Donate>
+              <Donate donation={20}>$20</Donate>
+              <Donate donation={50}>$50</Donate>
+              <Donate donation={100}>$100</Donate>
               <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
