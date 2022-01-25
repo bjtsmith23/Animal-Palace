@@ -34,3 +34,11 @@ export const QUERY_ALL_ANIMALS = gql`
     }
   }
 `;
+
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($initialDonation: Int!) {
+    checkout(initialDonation: $initialDonation) {
+      session
+    }
+  }
+`;
