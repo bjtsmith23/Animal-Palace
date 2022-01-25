@@ -28,6 +28,19 @@ const resolvers = {
 
       return { token, user };
     },
+    addUserAnimal: async (parent, { animalId }, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $addToSet: { adoptedAnimals: { _id: animalId } },
+          },
+          {
+            new: true,
+          }
+        ).populate("adoptedAnimals");
+      }
+    },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, {
