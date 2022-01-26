@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import DonateModal from "../components/DonateModal";
+import DonateModal from "./DonateModal";
 
 export default function CheckoutForm() {
   // modal state for donate button
