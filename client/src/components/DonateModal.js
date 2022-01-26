@@ -23,17 +23,16 @@ export default function DonateModal(props) {
     }
   }, [data]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     let donateAmount;
-    console.log(event.target.donate.value);
-    if (event.target.donate.value) {
-      donateAmount = parseInt(event.target.donate.value);
-    } else {
+    if (event.target.getAttribute("data-donation")) {
       donateAmount = parseInt(event.target.getAttribute("data-donation"));
+    } else {
+      const customInput = document.querySelector("#custom-donation");
+      donateAmount = parseInt(customInput.value);
     }
 
-    console.log(donateAmount);
     getCheckout({
       variables: { initialDonation: donateAmount },
     });
@@ -73,9 +72,10 @@ export default function DonateModal(props) {
             </Button>
           </Col>
         </Row>
-        <Form.Group onSubmit={handleSubmit}>
+        <Form.Group>
           <Form.Label>Custom Amount: </Form.Label>
           <Form.Control
+            id="custom-donation"
             type="number"
             name="donate"
             min="1"
@@ -85,11 +85,7 @@ export default function DonateModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
-        <Button
-          variant="primary"
-          type="submit"
-          onClick={() => handleSubmit(this.state.name)}
-        >
+        <Button variant="primary" type="submit" onClick={handleSubmit}>
           Submit
         </Button>
       </Modal.Footer>
