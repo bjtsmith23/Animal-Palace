@@ -24,7 +24,7 @@ function Success() {
             sessionId: donationSessionId,
           },
         });
-        console.log(data);
+
         setTimeout(() => {
           window.location.assign("/contribution");
         }, 3000);

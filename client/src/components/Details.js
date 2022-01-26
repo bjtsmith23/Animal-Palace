@@ -6,12 +6,11 @@ import Card from "react-bootstrap/Card";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { ADD_USER_ANIMAL } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
-import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
 
 export default function Details(props) {
