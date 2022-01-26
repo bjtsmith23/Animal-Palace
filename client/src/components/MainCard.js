@@ -22,7 +22,7 @@ export default function MainCard({ animal, handleModalShow }) {
             data-modal-id={animal._id}
             onClick={handleModalShow}
           >
-            Learn More!
+            Learn More
           </Button>
         </Card.Body>
       </Card>
