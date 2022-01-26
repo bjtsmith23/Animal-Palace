@@ -27,7 +27,7 @@ export default function Details(props) {
   // console.log(data.user.adoptedAnimals);
 
   const handleAdoptSubmit = async (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     alert(`Thank you ${user.firstName} for adopting ${animalinfo.name}! 🎉`);
 
     try {
@@ -36,7 +36,7 @@ export default function Details(props) {
           animalId: animalinfo._id,
         },
       });
-
+      window.location.reload(false);
       // console.log(data.addUserAnimal.adoptedAnimals[0]._id);
     } catch (err) {
       console.log(err);
@@ -57,15 +57,15 @@ export default function Details(props) {
         (animal) => animal._id === animalinfo._id
       ) >= 0;
     const hasLoggedIn = Auth.loggedIn();
-    console.log(user.adoptedAnimals);
+
     if (hasLoggedIn) {
-      if (hasDonated) {
+      if (!hasAdopted && hasDonated) {
         return (
           <Button onClick={handleAdoptSubmit} variant="outline-success">
             ❤ Adopt Me! ❤
           </Button>
         );
-      } else if (hasAdopted) {
+      } else if (hasDonated && hasAdopted) {
         return <p>You have already adopted {animalinfo.name}. 🎉</p>;
       } else {
         return <p>Please donate to adopt {animalinfo.name}.</p>;
