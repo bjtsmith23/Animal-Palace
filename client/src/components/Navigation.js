@@ -15,10 +15,7 @@ function Navigation() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Donate donation={10}>$10</Donate>
-              <Donate donation={20}>$20</Donate>
-              <Donate donation={50}>$50</Donate>
-              <Donate donation={100}>$100</Donate>
+              <Donate />
               <Nav.Link href="/main">Adopt</Nav.Link>
               <Nav.Link href="/contribution">Contribution</Nav.Link>
               <Nav.Link href="/main" onClick={() => Auth.logout()}>
@@ -34,10 +31,8 @@ function Navigation() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Donate donation={10}>$10</Donate>
-              <Donate donation={20}>$20</Donate>
-              <Donate donation={50}>$50</Donate>
-              <Donate donation={100}>$100</Donate>
+              <Donate />
+
               <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
