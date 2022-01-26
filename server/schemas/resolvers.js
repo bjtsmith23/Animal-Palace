@@ -12,7 +12,6 @@ const resolvers = {
       return await User.find({}).populate("adoptedAnimals");
     },
     user: async (parent, args, context) => {
-      console.log("this is context user!!", context.user);
       if (context.user) {
         const user = await User.findById(context.user._id).populate(
           "adoptedAnimals"
@@ -23,7 +22,7 @@ const resolvers = {
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const initialDonation = args.initialDonation;
-      console.log(`initialDonation=${initialDonation}`);
+
       const product = await stripe.products.create({
         name: "Donation",
         description: "One-time donation",
@@ -42,7 +41,7 @@ const resolvers = {
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/main`,
       });
-      console.log(session);
+
       return { session: session.id };
     },
   },
@@ -68,14 +67,11 @@ const resolvers = {
       throw new AuthenticationError("Must be logged in!!");
     },
     deleteUserAnimal: async (parent, { animalId }, context) => {
-      console.log("inside delete user animal");
       if (context.user) {
-        console.log(animalId);
-        console.log("this is user!", context.user);
         return await User.findOneAndUpdate(
           { _id: context.user._id },
           {
-            $pull: { adoptedAnimals: { $eq: animalId } }
+            $pull: { adoptedAnimals: { $eq: animalId } },
           },
           {
             new: true,
@@ -85,8 +81,6 @@ const resolvers = {
       throw new AuthenticationError("Must be logged in!!");
     },
     addUserDonationFromSession: async (parent, args, context) => {
-      console.log(context.user);
-      console.log(args);
       if (context.user) {
         const session = await stripe.checkout.sessions.retrieve(args.sessionId);
         const donationAmount = session.amount_total / 100;
@@ -103,7 +97,6 @@ const resolvers = {
     },
     addUserDonation: async (parent, { donation }, context) => {
       if (context.user) {
-        // console.log(context.user);
         return await User.findByIdAndUpdate(
           { _id: context.user._id },
           {
