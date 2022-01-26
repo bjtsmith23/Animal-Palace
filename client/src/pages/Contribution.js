@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import Auth from "../utils/auth";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Card from "react-bootstrap/Card";
@@ -8,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import ContributionCard from "../components/ContributionCard";
 import "../assets/css/Contribution.css";
-
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
 
