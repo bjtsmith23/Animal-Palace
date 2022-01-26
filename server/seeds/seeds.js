@@ -44,6 +44,12 @@ db.once("open", async () => {
       password: "password",
     },
     {
+      firstName: "Qi",
+      lastName: "Zhang",
+      email: "qizhang@gmail.com",
+      password: "password",
+    },
+    {
       firstName: "Ken",
       lastName: "Crawford",
       email: "kencrawford@gmail.com",
