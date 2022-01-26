@@ -53,10 +53,10 @@ const typeDefs = gql`
     ): User
     addUserAnimal(animalId: ID): User
     deleteUserAnimal(animalId: ID): User
+    addUserDonationFromSession(sessionId: String): User
     addUserDonation(donation: Int): User
     login(email: String!, password: String!): Auth
   }
 `;
 
 module.exports = typeDefs;
-
