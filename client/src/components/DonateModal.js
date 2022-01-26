@@ -8,7 +8,7 @@ import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(
-  "pk_test_51KLThrKTqyKGrYgVVrsKQTTMxSDlTqtuBSF9JcxrJzKFlwOHVKU2BteNUBq1m1cw0wPE3gfCIZXNHMOJzKJUnjjk00xacvbzIb"
+  "pk_test_51KMGDMCc7AfbHpKadQV7HbBx60IoMbADpkKIKE0rWo4ifYrxuppHZp2JZjsPv6LbTIPo0y5TnhTtf8zQ5eqSNnF500wyDoYloD"
 );
 
 export default function DonateModal(props) {

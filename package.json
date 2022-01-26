@@ -17,6 +17,7 @@
     "concurrently": "^7.0.0"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.7.0",
     "dotenv": "^14.3.0"
   }
 }
