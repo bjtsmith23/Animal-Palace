@@ -101,3 +101,15 @@ export const ADD_USER_DONATION_FROM_SESSION = gql`
     }
   }
 `;
+
+export const DELETE_USER_ANIMAL = gql`
+  mutation ($animalId: ID) {
+    deleteUserAnimal(animalId: $animalId) {
+      firstName
+      adoptedAnimals {
+        _id
+        name
+      }
+    }
+  }
+`;
