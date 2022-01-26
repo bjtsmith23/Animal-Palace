@@ -12,7 +12,9 @@ export default function CheckoutForm() {
         show={donateModalShow}
         onHide={() => setDonateModalShow(false)}
       />
-      <Button onClick={() => setDonateModalShow(true)}>Donate</Button>
+      <Button variant="success" onClick={() => setDonateModalShow(true)}>
+        Donate
+      </Button>
     </div>
   );
 }

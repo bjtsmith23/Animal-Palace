@@ -24,10 +24,9 @@ export default function Details(props) {
   if (data) {
     user = data.user;
   }
-  // console.log(data.user.adoptedAnimals);
 
   const handleAdoptSubmit = async (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     alert(`Thank you ${user.firstName} for adopting ${animalinfo.name}! 🎉`);
 
     try {
@@ -37,17 +36,11 @@ export default function Details(props) {
         },
       });
       window.location.reload(false);
-      // console.log(data.addUserAnimal.adoptedAnimals[0]._id);
     } catch (err) {
       console.log(err);
     }
   };
 
-  // let animalIdAlreadyInArr = data.addUserAnimal.adoptedAnimals[0]._id;
-  // console.log(animalIdAlreadyInArr);
-  // if (animalIdAlreadyInArr) {
-  //   alert(`${animalinfo.name} has already been adopted!`);
-  // }
   const renderAdoptButton = () => {
     const hasDonated = user && user.totalDonations;
     const hasAdopted =
