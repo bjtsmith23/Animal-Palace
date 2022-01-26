@@ -35,6 +35,7 @@ const resolvers = {
       });
 
       const session = await stripe.checkout.sessions.create({
+        submit_type: "donate",
         payment_method_types: ["card"],
         mode: "payment",
         line_items: [{ price: price.id, quantity: 1 }],
