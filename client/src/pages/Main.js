@@ -32,7 +32,6 @@ export default function Main() {
   const [selectedType, setSelectedType] = useState(); // for animal type
   const handleFilterButton = (e) => {
     const type = e.target.getAttribute("data-animal-type");
-    // matchingTypeAnimal = animals.filter((animal) => animal.type === type);
     setSelectedType(type);
   };
 

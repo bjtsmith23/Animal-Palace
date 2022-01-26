@@ -1,9 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-// import exampleDog from "../assets/images/home-puppy.jpg";
-// import exampleCat from "../assets/images/home-cat.jpg";
-
 export default function ContributionCard({ animalAdopted }) {
   return (
     <>
