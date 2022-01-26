@@ -88,6 +88,16 @@ export const ADD_USER_DONATION_FROM_SESSION = gql`
     addUserDonationFromSession(sessionId: $sessionId) {
       firstName
       totalDonations
+      adoptedAnimals {
+        _id
+        type
+        name
+        description
+        image
+        sex
+        age
+        favoriteFood
+      }
     }
   }
 `;

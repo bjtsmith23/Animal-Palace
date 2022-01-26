@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import Auth from "../utils/auth";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,22 +9,30 @@ import Container from "react-bootstrap/Container";
 import ContributionCard from "../components/ContributionCard";
 import "../assets/css/Contribution.css";
 
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
-import { ADD_USER_DONATION_FROM_SESSION } from "../utils/mutations";
 
 export default function Contribution() {
+  const [user, setUser] = useState({});
+  const [adoptedAnimalArr, setAdoptedAnimalArr] = useState([]);
   const { data } = useQuery(QUERY_USER);
-  let user = data?.user || [];
 
-  if (data) {
-    user = data.user;
-  }
+  useEffect(() => {
+    if (data) {
+      setUser(data.user);
+      setAdoptedAnimalArr(data.user.adoptedAnimals);
+    }
+  }, [data]);
+  // let user = data?.user || [];
 
-  let adoptedAnimalArr = (user && user.adoptedAnimals) || [];
+  // if (data) {
+  //   user = data.user;
+  // }
 
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries());
+  // let adoptedAnimalArr = (user && user.adoptedAnimals) || [];
+
+  // const urlSearchParams = new URLSearchParams(window.location.search);
+  // const params = Object.fromEntries(urlSearchParams.entries());
   // if (params["session_id"]) {
   //   const sessionId = params["session_id"];
   //   const { data } = useMutation(ADD_USER_DONATION_FROM_SESSION, {
