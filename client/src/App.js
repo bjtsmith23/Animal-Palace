@@ -19,7 +19,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
-  "pk_test_51KLThrKTqyKGrYgVVrsKQTTMxSDlTqtuBSF9JcxrJzKFlwOHVKU2BteNUBq1m1cw0wPE3gfCIZXNHMOJzKJUnjjk00xacvbzIb"
+  "pk_test_51KMFz6BJdiNujxjRZ9q0n9nbk4Shx2igVZAG5CDGCxfDUMzy323v32liHgPH0hSGQUrwKLsw5JjHPj3l8Oo2U36J00ReFddnH6"
 );
 const httpLink = createHttpLink({
   uri: "/graphql",
