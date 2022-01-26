@@ -75,18 +75,12 @@ const resolvers = {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
           {
-            $pull: { adoptedAnimals: { _id: animalId } }
+            $pull: { adoptedAnimals: { $eq: animalId } }
           },
-          function(err, result) {
-            if (err) {
-              console.log("This is error!!!", err);
-            }
-            else {
-              console.log("This is a result", result);
-            }
-            
+          {
+            new: true,
           }
-        );
+        ).populate("adoptedAnimals");
       }
       throw new AuthenticationError("Must be logged in!!");
     },
