@@ -9,8 +9,9 @@ import Container from "react-bootstrap/Container";
 import ContributionCard from "../components/ContributionCard";
 import "../assets/css/Contribution.css";
 
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
+import { ADD_USER_DONATION_FROM_SESSION } from "../utils/mutations";
 
 export default function Contribution() {
   const { data } = useQuery(QUERY_USER);
@@ -20,9 +21,19 @@ export default function Contribution() {
     user = data.user;
   }
 
-  let adoptedAnimalArr = user.adoptedAnimals;
-  console.log(adoptedAnimalArr);
+  let adoptedAnimalArr = (user && user.adoptedAnimals) || [];
 
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+  // if (params["session_id"]) {
+  //   const sessionId = params["session_id"];
+  //   const { data } = useMutation(ADD_USER_DONATION_FROM_SESSION, {
+  //     variables: {
+  //       sessionId,
+  //     },
+  //   });
+  //   console.log(`updated totaldonation=${JSON.stringify(data)}`);
+  // }
   return (
     <div className="contribution-container">
       <div className="header">

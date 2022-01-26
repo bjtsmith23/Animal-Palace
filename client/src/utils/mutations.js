@@ -82,3 +82,12 @@ export const ADD_USER_DONATION = gql`
     }
   }
 `;
+
+export const ADD_USER_DONATION_FROM_SESSION = gql`
+  mutation ($sessionId: String) {
+    addUserDonationFromSession(sessionId: $sessionId) {
+      firstName
+      totalDonations
+    }
+  }
+`;

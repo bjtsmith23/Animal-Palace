@@ -20,8 +20,7 @@ const resolvers = {
       }
     },
     checkout: async (parent, args, context) => {
-      console.log("I am here");
-      const url = new URL(context.headers.referer).origin;
+      const url = "http://localhost:3000/contribution";
       const initialDonation = args.initialDonation;
       console.log(`initialDonation=${initialDonation}`);
       const product = await stripe.products.create({
@@ -39,7 +38,7 @@ const resolvers = {
         payment_method_types: ["card"],
         mode: "payment",
         line_items: [{ price: price.id, quantity: 1 }],
-        success_url: url,
+        success_url: `${url}/?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: url,
       });
       console.log(session);
@@ -64,6 +63,21 @@ const resolvers = {
             new: true,
           }
         ).populate("adoptedAnimals");
+      }
+    },
+    addUserDonationFromSession: async (parent, args, context) => {
+      if (context.user) {
+        const session = await stripe.checkout.sessions.retrieve(args.sessionId);
+        const donationAmount = session.amount_total / 100;
+        return await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $inc: { totalDonations: donationAmount },
+          },
+          {
+            new: true,
+          }
+        );
       }
     },
     addUserDonation: async (parent, { donation }, context) => {
