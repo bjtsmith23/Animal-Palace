@@ -1,5 +1,5 @@
 // import "./App.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   ApolloClient,
@@ -14,7 +14,7 @@ import Main from "./pages/Main";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Contribution from "./pages/Contribution";
-import Donate from "./pages/Donate";
+import Success from "./pages/Success";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -42,21 +42,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [clientSecret, setClientSecret] = useState("");
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("/create-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
-  const appearance = {
-    theme: "stripe",
-  };
-
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -67,7 +52,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/contribution" component={Contribution} />
-            <Route exact path="/donate" component={Donate} />
+            <Route exact path="/success" component={Success} />
           </Elements>
         </Switch>
       </Router>
