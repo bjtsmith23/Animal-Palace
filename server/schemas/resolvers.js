@@ -20,12 +20,12 @@ const resolvers = {
       }
     },
     checkout: async (parent, args, context) => {
-      const url = "http://localhost:3000/contribution";
+      const url = new URL(context.headers.referer).origin;
       const initialDonation = args.initialDonation;
       console.log(`initialDonation=${initialDonation}`);
       const product = await stripe.products.create({
         name: "Donation",
-        description: "One time donation",
+        description: "One-time donation",
       });
       const price = await stripe.prices.create({
         product: product.id,
@@ -38,8 +38,8 @@ const resolvers = {
         payment_method_types: ["card"],
         mode: "payment",
         line_items: [{ price: price.id, quantity: 1 }],
-        success_url: `${url}/?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: url,
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/main`,
       });
       console.log(session);
       return { session: session.id };
@@ -66,6 +66,8 @@ const resolvers = {
       }
     },
     addUserDonationFromSession: async (parent, args, context) => {
+      console.log(context.user);
+      console.log(args);
       if (context.user) {
         const session = await stripe.checkout.sessions.retrieve(args.sessionId);
         const donationAmount = session.amount_total / 100;
