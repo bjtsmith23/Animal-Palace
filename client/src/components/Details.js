@@ -11,13 +11,23 @@ import { ADD_USER_ANIMAL } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
+import { useQuery } from "@apollo/client";
+import { QUERY_USER } from "../utils/queries";
+
 export default function Details(props) {
   const { animalinfo } = props;
   const [addUserAnimal, { error }] = useMutation(ADD_USER_ANIMAL);
 
+  const { data } = useQuery(QUERY_USER);
+  let user = data?.user || [];
+
+  if (data) {
+    user = data.user;
+  }
+
   const handleAdoptSubmit = async (event) => {
     event.preventDefault();
-    // alert(`Thank you for adopting ${animalinfo.name}!`);
+    alert(`Thank you ${user.firstName} for adopting ${animalinfo.name}! 🎉`);
 
     try {
       const { data } = await addUserAnimal({
@@ -25,32 +35,31 @@ export default function Details(props) {
           animalId: animalinfo._id,
         },
       });
-
-      console.log(data.addUserAnimal.adoptedAnimals[0]._id);
+      window.location.reload(false);
     } catch (err) {
       console.log(err);
     }
   };
 
-  let animalIdAlreadyInArr = data.addUserAnimal.adoptedAnimals[0]._id;
-  console.log(animalIdAlreadyInArr);
-  // if (animalIdAlreadyInArr) {
-  //   alert(`${animalinfo.name} has already been adopted!`);
-  // }
   const renderAdoptButton = () => {
-    const hasDonated = true;
-    const hasAdopted = true;
+    const hasDonated = user && user.totalDonations;
+    const hasAdopted =
+      user &&
+      user.adoptedAnimals &&
+      user.adoptedAnimals.findIndex(
+        (animal) => animal._id === animalinfo._id
+      ) >= 0;
     const hasLoggedIn = Auth.loggedIn();
 
     if (hasLoggedIn) {
-      if (hasDonated) {
+      if (!hasAdopted && hasDonated) {
         return (
           <Button onClick={handleAdoptSubmit} variant="outline-success">
             ❤ Adopt Me! ❤
           </Button>
         );
-      } else if (hasAdopted) {
-        return <p>You have already adopted {animalinfo.name}.</p>;
+      } else if (hasDonated && hasAdopted) {
+        return <p>You have already adopted {animalinfo.name}. 🎉</p>;
       } else {
         return <p>Please donate to adopt {animalinfo.name}.</p>;
       }

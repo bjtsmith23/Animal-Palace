@@ -5,20 +5,17 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavLogo from "../assets/images/brand-img.png";
 import "../assets/css/Navigation.css";
-import Donate from "../pages/Donate";
+import Donate from "./DonateButton";
 
 function Navigation() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
         <>
+          <Donate className="text-center" />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Donate donation={10}>$10</Donate>
-              <Donate donation={20}>$20</Donate>
-              <Donate donation={50}>$50</Donate>
-              <Donate donation={100}>$100</Donate>
               <Nav.Link href="/main">Adopt</Nav.Link>
               <Nav.Link href="/contribution">Contribution</Nav.Link>
               <Nav.Link href="/main" onClick={() => Auth.logout()}>
@@ -34,10 +31,6 @@ function Navigation() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Donate donation={10}>$10</Donate>
-              <Donate donation={20}>$20</Donate>
-              <Donate donation={50}>$50</Donate>
-              <Donate donation={100}>$100</Donate>
               <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
@@ -57,7 +50,7 @@ function Navigation() {
             height="50"
             className="d-inline-block align-top"
           />{" "}
-          Donation App
+          ANIMAL PALACE
         </Navbar.Brand>
         <nav>{showNavigation()}</nav>
       </Container>

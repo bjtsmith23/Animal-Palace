@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import Auth from "../utils/auth";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -13,15 +13,16 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
 
 export default function Contribution() {
+  const [user, setUser] = useState({});
+  const [adoptedAnimalArr, setAdoptedAnimalArr] = useState([]);
   const { data } = useQuery(QUERY_USER);
-  let user = data?.user || [];
 
-  if (data) {
-    user = data.user;
-  }
-
-  let adoptedAnimalArr = user.adoptedAnimals;
-  console.log(adoptedAnimalArr);
+  useEffect(() => {
+    if (data) {
+      setUser(data.user);
+      setAdoptedAnimalArr(data.user.adoptedAnimals);
+    }
+  }, [data]);
 
   return (
     <div className="contribution-container">
@@ -36,22 +37,20 @@ export default function Contribution() {
         <Container>
           <Row>
             <Col className="d-flex justify-content-center">
-              <Card style={{ width: "25rem" }}>
+              <Card style={{ width: "20rem" }}>
                 <Card.Header as="h5">Total Animals Adopted: </Card.Header>
                 <Card.Body>
                   <Card.Title>
                     {user.adoptedAnimals ? user.adoptedAnimals.length : 0}
                   </Card.Title>
-                  <Card.Text>Wow! Great job!</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col className="d-flex justify-content-center">
-              <Card style={{ width: "25rem" }}>
+              <Card style={{ width: "20rem" }}>
                 <Card.Header as="h5">Total Donations: </Card.Header>
                 <Card.Body>
                   <Card.Title>${user.totalDonations}</Card.Title>
-                  <Card.Text>Thank you so much!</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
