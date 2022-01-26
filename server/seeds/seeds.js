@@ -70,6 +70,13 @@ db.once("open", async () => {
       password: "password",
       totalDonations: 35,
     },
+    {
+      firstName: "Qi",
+      lastName: "Zhang",
+      email: "qizhang@gmail.com",
+      password: "password",
+      totalDonations: 0,
+    },
 
   ]);
 
