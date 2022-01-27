@@ -13,8 +13,7 @@ export default function Main() {
   const { loading, data } = useQuery(QUERY_ALL_ANIMALS);
   const animals = data?.animals || [];
 
-  // modal state/handlers
-  const [selectedAnimal, setSelectedAnimal] = useState(); // for the modal
+  const [selectedAnimal, setSelectedAnimal] = useState();
   const [modalShow, setModalShow] = useState(false);
   const handleModalShow = (e) => {
     setModalShow(!modalShow);
@@ -23,13 +22,11 @@ export default function Main() {
     setSelectedAnimal(matchingContent);
   };
 
-  // filtered unique animal types to be mapped through to create filter buttons
   const animalTypes = animals.filter(
     (val, index, array) => array.findIndex((t) => t.type === val.type) === index
   );
 
-  // filter state/handler
-  const [selectedType, setSelectedType] = useState(); // for animal type
+  const [selectedType, setSelectedType] = useState();
   const handleFilterButton = (e) => {
     const type = e.target.getAttribute("data-animal-type");
     setSelectedType(type);

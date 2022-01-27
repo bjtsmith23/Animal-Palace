@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import DonateModal from "./DonateModal";
 
 export default function CheckoutForm() {
-  // modal state for donate button
   const [donateModalShow, setDonateModalShow] = useState(false);
 
   return (
