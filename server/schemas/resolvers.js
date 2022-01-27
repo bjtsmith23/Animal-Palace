@@ -66,18 +66,35 @@ const resolvers = {
       }
       throw new AuthenticationError("Must be logged in!!");
     },
-    deleteUserAnimal: async (parent, { animalId }, context) => {
+    // deleteUserAnimal: async (parent, { animalId }, context) => {
+    //   if (context.user) {
+    //     return await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       {
+    //         $pull: { adoptedAnimals: { $eq: animalId } },
+    //       },
+    //       {
+    //         new: true,
+    //       }
+    //     ).populate("adoptedAnimals");
+    //   }
+    //   throw new AuthenticationError("Must be logged in!!");
+    // },
+    deleteUserAnimal: async (parent, args, context) => {
+      // console.log(animalId);
+      console.log(args);
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
           {
-            $pull: { adoptedAnimals: { $eq: animalId } },
+            $pull: { adoptedAnimals: { $in: args.animalId } },
           },
           {
             new: true,
           }
         ).populate("adoptedAnimals");
       }
+
       throw new AuthenticationError("Must be logged in!!");
     },
     addUserDonationFromSession: async (parent, args, context) => {
