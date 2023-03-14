@@ -138,7 +138,7 @@ db.once("open", async () => {
       name: "Dizzy",
       sex: "F",
       description:
-        "Always running and jumping. It is impossible for her to remain still. Often whe will chase her tail for long periods. She should have been named Merry Go Round.",
+        "Always running and jumping, it is impossible for her to remain still. Often we will see her chasing her tail for hour, she should have been named Merry Go Round.",
       favoriteFood: "Fish",
       age: 1,
       image: "catdizzy.jpg",
@@ -158,7 +158,7 @@ db.once("open", async () => {
       name: "Cauliflower",
       sex: "F",
       description:
-        "Cauliflower pretends to ignore all all of us for a few minutes. Then when we aren't looking he rubs hinself against one of us.",
+        "Cauliflower pretends to ignore all all of us for a few minutes. Then when we aren't looking he rubs himself against one of us.",
       favoriteFood: "Table scraps",
       age: 1,
       image: "catcauliflower.jpg",
@@ -178,7 +178,7 @@ db.once("open", async () => {
       name: "Simpson",
       sex: "M",
       description:
-        "When ever the TV set is on he will watch it endlessly. Sometimes he will even ignore his food when Simpsons is on.",
+        "Whenever the TV set is on he will watch it endlessly. Sometimes he will even ignore his food when The Simpsons is on.",
       favoriteFood: "Tuna fish",
       age: 2,
       image: "catsimpson.jpg",
@@ -198,7 +198,7 @@ db.once("open", async () => {
       name: "Banana",
       sex: "F",
       description:
-        "Banana will sometimes make the strangest faces when somebody new walks by. And when he is given a banana, he screaches in ecstasy.",
+        "Banana will sometimes make the strangest faces when somebody new walks by and when he is given a banana, he screeches in joy.",
       favoriteFood: "Cat food and banana",
       age: 2,
       image: "monkeybanana.jpg",
@@ -208,7 +208,7 @@ db.once("open", async () => {
       name: "Tenor",
       sex: "F",
       description:
-        "Tenor will always return a screech from Banana - but it always has to be louder and longer. She also loves mimic faces and gestures made by any passerby.",
+        "Tenor will always return a screech from Banana - but it always has to be louder and longer. She also loves to mimic faces and gestures made by any passerby.",
       favoriteFood: "Most vegetables",
       age: 2,
       image: "monkeytenor.jpg",
